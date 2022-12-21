@@ -1,0 +1,9 @@
+node_modules
+api/node_modules/*
+.DS_Store
+api/uploads/*
+!api/uploads/ka.png
+!api/uploads/*.md
+api/dist
+client/dist
+.vscode

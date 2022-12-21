@@ -1,0 +1,267 @@
+#boxMessageList {
+  width: 100%;
+  // position: absolute;
+  // top: 0px;
+  left: 0px;
+
+  height: 100%;
+  position: absolute;
+  top: 0px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#boxMessageList .content {
+  max-width: 90%;
+
+  position: relative;
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  animation-name: boundWindow;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  animation-delay: 0.3s;
+}
+
+@keyframes boundWindow {
+  0% {
+    top: 0%;
+    left: 0%;
+  }
+
+  12.5% {
+    top: 1%;
+    left: 1%;
+  }
+
+  25% {
+    top: 1%;
+    left: -1%;
+  }
+
+  37.5% {
+    top: -1%;
+    left: -1%;
+  }
+
+  50% {
+    top: -1%;
+    left: 1%;
+  }
+
+  62.5% {
+    top: 1%;
+    left: 1%;
+  }
+
+  100% {
+    top: 0%;
+    left: 0%;
+  }
+}
+
+.textLeft,
+.textRight {
+  animation-name: itemEnter;
+  animation-duration: 0.6s;
+  transition: all 0.4s ease-in;
+  transition: margin-top 3s cubic-bezier(0.4, 0, 0.21, 1.1);
+
+  display: inline-block;
+  position: absolute;
+
+  width: 50vw;
+  margin-top: 0vh;
+  line-height: 23px;
+}
+
+.textRight {
+  margin-top: -10vh;
+  text-align: right;
+}
+
+.textLeft .text {
+  word-break: break-word;
+  float: left;
+  background-color: #1c71a5;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  margin-right: 10px;
+  margin-left: 10px;
+  box-shadow: 0 0 60px #009dc1;
+
+  
+}
+
+@for $i from 160 to 0 {
+  .textLeft .text span:nth-child(#{abs($i)}) {
+    animation-delay: (abs($i) * 0.1) + s;
+  }
+}
+
+.textLeft .text span {
+  animation-name: txtEnter;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  //opacity: 0;
+
+  transform: scale(3) rotateY(55deg) rotateX(10deg) rotate(-2deg);
+  opacity: 0;
+
+  margin-right: 3px;
+  word-break: normal;
+  display: inline-block;
+}
+
+
+@keyframes txtEnter {
+  from {
+    transform: scale(3) rotateY(55deg) rotateX(10deg) rotate(-2deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    opacity: 1;
+  }
+}
+
+
+.textLeft img {
+  width: 40%;
+  border-top-right-radius: 38px;
+  border-bottom-left-radius: 38px;
+  border-bottom-right-radius: 38px;
+  box-shadow: 0 0 37px #1c71a5;
+  opacity: 0.9;
+}
+
+.textLeft .text.withMiniImg {
+  margin-right: 121px;
+  padding-right: 65px;
+}
+
+.textLeft .miniImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  right: 20px;
+  top: -47px;
+  box-shadow: 0 0 60px #009dc1;
+}
+
+.textLeft .miniImg.miniImgBack {
+  transform: scale(1.2);
+  opacity: 0.7;
+  filter: blur(2px);
+  top: -46px;
+  right: 20px;
+
+
+}
+
+.textRight div {
+  line-height: 25px;
+  word-break: break-word;
+  float: right;
+  background-color: #232527;
+  color: #aaef45;
+  padding: 10px;
+  margin-right: 9px;
+  margin-left: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  box-shadow: 0 0 24px rgba(170, 239, 69, 0.4);
+}
+
+.loading {
+  text-align: center;
+}
+
+
+@keyframes itemEnter {
+  from {
+    transform: scale(7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+  #boxMessageList {
+    width: 100%;
+    top: 0;
+    left: 0px;
+  }
+
+  #boxMessageList .content {
+    max-width: 95%;
+  }
+
+  .textLeft,
+  .textRight {
+    position: absolute;
+    width: 100vw;
+
+    font-size: 0.8em;
+    line-height: 19px;
+  }
+
+  .textLeft .image {
+    width: auto;
+  }
+
+  .textLeft img {
+    display: none;
+  }
+
+  .textLeft .text.withMiniImg {
+    margin-right: 10px;
+    padding-right: 25px;
+  }
+
+  .textLeft .miniImg {
+    right: -13px;
+    top: -115px;
+    transform: scale(0.6);
+  }
+
+  .textLeft .miniImg.miniImgBack {
+    transform: scale(0.7);
+    top: -115px;
+    right: -11px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+
+  .textLeft,
+  .textRight {
+    width: 80vw;
+  }
+}

@@ -1,0 +1,21 @@
+<svg width="39px" height="39px" 
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;">
+
+
+
+    <circle cx="50" cy="50" style="opacity: 1" fill="none" stroke="#3bc5e8" stroke-width="3" r="10" stroke-dasharray="30 10" transform="rotate(203.862 50 50)">
+        <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-360 50 50" keyTimes="0;1" dur="0.6s" begin="0s" repeatCount="indefinite"></animateTransform>
+    </circle>
+
+
+    <circle cx="50" cy="50" fill="none" style="opacity: 0.8"  stroke="#3bc5e8" stroke-width="5" r="22" stroke-dasharray="110 110" transform="rotate(203.862 50 50)">
+        <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="0.7s" begin="0s" repeatCount="indefinite"></animateTransform>
+    </circle>
+
+
+
+    <circle cx="50" cy="50" fill="none" style="opacity: 0.6"  stroke="#3bc5e8" stroke-width="6" r="35" stroke-dasharray="190 190" transform="rotate(203.862 50 50)">
+        <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+    </circle>
+
+</svg>

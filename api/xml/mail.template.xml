@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<body style="background-color:$corFundo;">
+  <table align="center" width="100%">
+    <tr>
+      <td>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:0px;width:580px;margin:0 auto;">
+          <tbody>
+            <tr>
+              <td>
+                <a href="$siteUrl" target="_blank">
+                  <img src="$logoUrl" border="0" alt="Mail" width="150" style="padding: 0px; width:150px;display:block;"/>
+                </a>
+                <h2 style="font-family:'Open Sans', sans-serif;margin-top: 20px; color: $corTitulo1; padding-left: 0px">Olá, $nome!</h2>
+              </td>
+            </tr>
+            <tr>
+              <td style="margin-bottom: 15px;font-size: 14px;font-family: 'Open Sans', sans-serif;line-height: 1.87;letter-spacing: normal;color: #fff;">
+              $corpoBody
+              </td>
+            </tr>
+            <tr>
+              <td style="color: #fff;padding: 10px 0 10px 0;font-family: 'Open Sans', sans-serif;text-align: center;font-size: 11px;padding-top: 30px;">
+                Não responda este e-mail. 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>

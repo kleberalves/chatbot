@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "AllerRegular";
+  src: url("../fontes/Aller_Lt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AllerBold";
+  src: url("../fontes/Aller_Bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  color: #aaef45;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-color: #0e1319;
+  background-position-x: center;
+}
+
+* {
+  font-family: "AllerRegular";
+}
+
+*:focus {
+  outline: none;
+}
+
+.img1 {
+  background-image: url('../Imagens/rapel.jpg');
+  background-image: url('../Imagens/aquario.jpg');
+  background-image: url('../Imagens/agradecer.jpg');
+  background-image: url('../Imagens/mac.jpg');
+  background-image: url('../Imagens/mail-topo.png');
+}
+
+.backImg {
+  opacity: 0.3;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  filter: blur(3px);
+  transition: opacity 0.4s ease-in;
+  background-position: center center;
+}
+
+.backImg.close {
+  opacity: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+@import 'msgList';
+@import 'inputText';
+@import "options";
+
+

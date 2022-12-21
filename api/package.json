@@ -1,0 +1,92 @@
+{
+  "name": "kleberalves-api",
+  "version": "1.0.0",
+  "description": "kleberalves",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "scripts": {
+    "build:apidocs": "lb-apidocs",
+    "build": "lb-tsc -p tsconfig.json --target es2017 --outDir dist",
+    "build:watch": "lb-tsc --watch",
+    "clean": "lb-clean dist",
+    "lint": "npm run prettier:check && npm run tslint",
+    "lint:fix": "npm run tslint:fix && npm run prettier:fix",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "tslint": "lb-tslint",
+    "tslint:fix": "npm run tslint -- --fix",
+    "pretest": "npm run clean && npm run build",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "posttest": "npm run lint",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
+    "migrate": "node ./dist/migrate",
+    "prestart": "npm run build",
+    "start": "npm install && pm2 start ecosystem.config.js --env production",
+    "local": "npm run build && node .",
+    "debug": "npm run build && node --inspect index.js",
+    "stop": "pm2 stop ecosystem.config.js --env production",
+    "prepublishOnly": "npm run test"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/authentication": "^2.2.2",
+    "@loopback/boot": "^1.5.10",
+    "@loopback/context": "^1.23.4",
+    "@loopback/core": "^1.10.6",
+    "@loopback/openapi-v3": "^1.10.0",
+    "@loopback/repository": "^1.15.3",
+    "@loopback/rest": "^1.22.0",
+    "@loopback/rest-explorer": "^1.4.3",
+    "@loopback/service-proxy": "^1.3.10",
+    "basic-auth-token": "^0.4.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^7.0.0",
+    "fb": "^2.0.0",
+    "isemail": "^3.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "loopback-connector-mongodb": "^5.2.1",
+    "loopback-connector-rest": "^3.6.0",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.0",
+    "node-vibrant": "^3.1.4",
+    "nodemailer": "^6.3.1",
+    "pm2": "^3.5.1",
+    "sharp": "^0.23.2",
+    "uuid": "^3.3.3",
+    "watson-developer-cloud": "^4.0.1",
+    "xml2js": "^0.4.22"
+  },
+  "devDependencies": {
+    "@loopback/build": "^2.0.15",
+    "@loopback/testlab": "^1.9.3",
+    "@loopback/tslint-config": "^2.1.0",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/fb": "0.0.23",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^10.17.0",
+    "@types/request": "^2.48.3",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  }
+}
